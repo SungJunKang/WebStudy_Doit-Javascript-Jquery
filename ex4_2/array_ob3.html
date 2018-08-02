@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>array_ob3</title>
+  <script>
+    var blueArr = ["금천구청", "독산", "가산디지털단지"];
+    var greenArr = ["구로디지털단지", "신대방", "신림"];
+
+    greenArr.splice(2, 1, "서초", "역삼");
+    console.log(greenArr);
+
+    var data1 = blueArr.pop();
+    var data2 = blueArr.shift();
+
+    blueArr.push(data2);
+    console.log(blueArr);
+
+    blueArr.unshift(data1);
+    console.log(blueArr);
+  </script>
+</head>
+<body>
+</body>
+</html>
