@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>function_1</title>
+  <script>
+    var cnt = 0;
+
+    myFnc();
+
+    function myFnc(){
+      cnt++;
+      document.write("Hello " + cnt, "<br>");
+    }
+
+    myFnc();
+
+    var theFnc = function(){
+      cnt++;
+      document.write("Bye " + cnt, "<br>");
+    }
+
+    theFnc();
+  </script>
+</head>
+<body>
+</body>
+</html>
