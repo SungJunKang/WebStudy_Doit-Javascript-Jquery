@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>jq_selec2_10</title>
+  <script src="js/jquery.js"></script>
+  <script>
+    $(function(){
+      var idxNum = $("li").index($("#list3"));
+
+      console.log(idxNum); // 2
+    });
+  </script>
+</head>
+<body>
+  <h1>배열 관련 함수</h1>
+  <ul>
+    <li>내용 1</li>
+    <li>내용 2</li>
+    <li id="list3">내용 3</li>
+    <li>내용 4</li>
+  </ul>
+</body>
+</html>
