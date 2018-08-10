@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>jq_selec_last</title>
+  <script src="js/jquery.js"></script>
+  <script>
+    $(function(){
+      $("#myList li:not(:first)").css({
+        "background-color": "yellow"
+      });
+    });
+  </script>
+</head>
+<body>
+  <ul id="myList">
+    <li>내용 1</li>
+    <li>내용 2</li>
+    <li>내용 3</li>
+    <li>내용 4</li>
+  </ul>
+</body>
+</html>

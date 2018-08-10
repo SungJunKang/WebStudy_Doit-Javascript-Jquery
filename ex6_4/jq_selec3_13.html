@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>jq_selec3_13</title>
+  <script src="js/jquery.js"></script>
+  <script>
+    $(function(){
+      $("strong").unwrap(); // <strong> 요소를 감싸는 부모 요소를 제거함.
+      $(".ct1").wrap("<div>"); // class 값이 "ct1"인 요소를 <div> 요소로 감쌈.
+      $(".ct2").wrapAll("<div>") // class 값이 "ct2"인 요소를 <div> 요소로 감쌈.
+      $("li").wrapInner("<h3>") // <li> 요소의 모든 하위 요소를 <h3> 요소로 감쌈.
+    });
+  </script>
+  <style type="text/css">
+    div{
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="tit_1">
+    <strong>객체 조작 및 생성</strong>
+  </h1>
+  <p class="ct1">내용 1</p>
+  <p class="ct1">내용 2</p>
+  <p class="ct2">내용 3</p>
+  <p class="ct2">내용 4</p>
+  <ul>
+    <li>내용 5</li>
+    <li>내용 6</li>
+  </ul>
+</body>
+</html>
