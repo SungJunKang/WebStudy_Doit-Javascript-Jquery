@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>event_last</title>
+  <script src="js/jquery.js"></script>
+  <script>
+    $(function(){
+      var beforeMenu = null;
+
+      $(".gnb button a").on("mouseover focus", function(){
+        if(beforeMenu){
+          beforeMenu.css("background", "none");
+        }
+        $(this).css("background-color", "#0ff");
+        beforeMenu = $(this);
+      });
+
+      $(".gnb").on("mouseleave", function(){
+        if(beforeMenu){
+          beforeMenu.css("background", "none");
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <ul class="gnb">
+    <button><a href="#">menu 1</a></button>
+    <button><a href="#">menu 2</a></button>
+    <button><a href="#">menu 3</a></button>
+    <button><a href="#">menu 4</a></button>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>event_last</title>
+  <script src="js/jquery.js"></script>
+  <script>
+    $(function(){
+      var baseFontSize = 14;
+
+      $(".zoomBtnZone button").on("click", zoomInOut);
+
+      function zoomInOut(){
+        if($(this).hasClass("zoomOutBtn")){
+          if(baseFontSize <= 8){
+            return false;
+          }
+          baseFontSize--;
+        }
+        else if($(this).hasClass("zoomInBtn")){
+          if(baseFontSize >= 20){
+            return true;
+          }
+          baseFontSize++;
+        }
+        else{
+          baseFontSize = 14;
+        }
+
+        $(".fontSize").text(baseFontSize + "px");
+        $("body").css({fontSize: baseFontSize + "px"});
+      }
+    });
+  </script>
+</head>
+<body>
+  <p class="zoomBtnZone">
+    <button class="zoomOutBtn">-</button>
+    <button class="originBtn">100%</button>
+    <button class="zoomInBtn">+</button>
+  </p>
+  <p class="fontSize">14px</p>
+  <div id="wrap">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+    anim id est laborum.
+  </div>
+</body>
+</html>

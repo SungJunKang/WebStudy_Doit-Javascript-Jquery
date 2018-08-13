@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>jq_event2_8</title>
+  <script src="js/jquery.js"></script>
+  <script>
+    $(function() {
+      $(".btn_1").on("mouseover", function(){
+        alert("HELLO!");
+      });
+
+      $(document).on("mouseover", ".btn_2", function(){
+        alert("WELCOME!");
+      });
+
+      var btn_2 = $("<p><button class=\"btn_2\">버튼 2</button></p>");
+
+      $("#wrap").append(btn_2);
+
+      $(".del_1").on("click", function(){
+        $(".btn_1").off("mouseover");
+      });
+
+      $(".del_2").on("click", function(){
+        $(document).off("mouseover", ".btn_2");
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <p><button class="btn_1">버튼 1</button></p>
+  </div>
+  <p>
+    <button class="del_1">버튼 1 이벤트 해제</button>
+    <button class="del_2">버튼 2 이벤트 해제</button>
+  </p>
+</body>
+</html>
