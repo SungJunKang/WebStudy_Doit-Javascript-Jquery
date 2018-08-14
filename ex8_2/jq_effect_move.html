@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>jq_effect_move</title>
+  <script src="js/jquery.js"></script>
+  <script>
+    $(function(){
+      var txt = $(".txt");
+      var cnt = 1;
+
+      $(".btnWrap button").on("click", function(){
+        if(!txt.is(":animated")){
+          if($(this).hasClass("backBtn")){
+            cnt--;
+            if(cnt < 1){
+              cnt = 1;
+              return false;
+            }
+            txt.animate({marginLeft: "-=10%"}, 300);
+          }
+          else{
+            cnt++;
+            if(cnt > 10){
+              cnt = 10;
+              return false;
+            }
+            txt.animate({marginLeft: "+=10%"}, 300);
+          }
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <p class="btnWrap">
+    <button class="backBtn">Back</button>
+    <button class="goBtn">Go</button>
+  </p>
+  <div class="wrap">
+    <p class="txt">내용</p>
+  </div>
+</body>
+</html>
