@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>jq_effect_4</title>
+  <script src="js/jquery.js"></script>
+  <script>
+    $(function(){
+      $(".txt")
+      .animate({marginLeft: "200px"}, 1000)
+      .animate({marginTop: "200px"}, 1000)
+      .queue(function(){
+        $(this).css("background-color", "gold");
+        $(this).dequeue();
+      })
+      .animate({marginLeft: 0}, 1000)
+      .animate({marginTop: 0}, 1000);
+    });
+  </script>
+  <style type="text/css">
+    *{
+      margin: 0;
+    }
+
+    .txt{
+      width: 50px;
+      text-align: center;
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <p class="txt">내용</p>
+</body>
+</html>
