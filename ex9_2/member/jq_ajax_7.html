@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>jq_ajax_2</title>
+  <script src="js/jquery.js"></script>
+  <script>
+    $(function(){
+      var href = "std07209.dothome.co.kr/member_2.php?callback=myFnc";
+      $.ajax({
+        url: href,
+        dataType: "jsonp"
+      }).done(function myTest(data){
+        if(data.length > 0){
+          var $table = $("<table />");
+          data.forEach(function(o){
+            var $id = o.id;
+            var $name = o.name;
+            var $email = o.email;
+
+            var $trTag = $("<tr />");
+            $trTag.append(
+              $("<td />").text($id),
+              $("<td />").text($name),
+              $("<td />").text($email)
+            );
+
+            $table.append($trTag);
+          });
+
+          $(".wrap").append($table);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="wrap"></div>
+</body>
+</html>
